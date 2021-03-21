@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Documentation for Upfront",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upfrontjs/docs.git"
+  },
+  "keywords": [],
+  "author": "Nandor Kraszlan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upfrontjs/docs/issues"
+  },
+  "homepage": "https://github.com/upfrontjs/docs#readme",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "vuepress": "^1.8.0",
+    "vuepress-plugin-fulltext-search": "^2.1.0",
+    "vuepress-plugin-one-click-copy": "^1.0.2"
+  }
+}
