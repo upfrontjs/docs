@@ -7,7 +7,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # checkout this repo
       - uses: actions/checkout@v2
         with:
+          path: main
+      # checkout the triggering repo
+      - uses: actions/checkout@v2
+        env:
+#          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        with:
           ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.ref }}
+          repository: ${{ github.event.client_payload.repo }}
+      - run: echo ${{ INPUT_REPOSITORY }}
+#      - uses: actions/setup-node@v2
+#        with:
+#          node-version: 15
+#          check-latest: true
+#      - run: npm ci
+#      - uses: netlify/actions/cli@master
+#        with:
+#          args: deploy --dir=site
