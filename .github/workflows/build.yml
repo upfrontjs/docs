@@ -19,7 +19,7 @@ jobs:
         with:
           ref: ${{ github.event.client_payload.ref }}
           repository: ${{ github.event.client_payload.repo }}
-      - run: echo ${{ github.event.client_payload.repo }} " ${{ github.event.client_payload.repo }}"
+      - run: echo $GITHUB_ACTION
 #      - uses: actions/setup-node@v2
 #        with:
 #          node-version: 15
