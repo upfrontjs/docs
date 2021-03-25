@@ -1,5 +1,7 @@
+const links = require('./links');
+
 module.exports = context => ({
-    title: 'Upfront',
+    title: 'UpfrontJS',
     description: 'Data handling framework complementary to backend model systems.',
     plugins: [
         ['one-click-copy', {
@@ -17,7 +19,7 @@ module.exports = context => ({
     },
     themeConfig: {
         nav: [
-            // api link
+            ...links.nav
         ],
         searchPlaceholder: 'Search...',
         smoothScroll: true,
@@ -25,7 +27,7 @@ module.exports = context => ({
         displayAllHeaders: true,
         initialOpenGroupIndex: 0,
 
-        // sidebar
+        sidebar: links.sidebar,
 
         repo: 'upfrontjs/framework',
         repoLabel: 'GitHub',
