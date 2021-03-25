@@ -16,7 +16,7 @@ jobs:
           repository: ${{ github.event.client_payload.repo }}
           path: framework
       - name: Copy docs assets
-        uses: ./.github/actions/copy-docs-assets
+        uses: ./.github/actions/copy-doc-assets
 #      - name: Build
 #      - uses: actions/setup-node@v2
 #        with:

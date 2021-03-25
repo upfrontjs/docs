@@ -1,0 +1,5 @@
+name: 'Copy doc assets'
+description: 'Copy and merge assets ready for vuepress'
+runs:
+  using: 'node12'
+  main: 'index.js'
