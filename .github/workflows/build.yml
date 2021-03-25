@@ -15,8 +15,8 @@ jobs:
           ref: ${{ github.event.client_payload.ref }}
           repository: ${{ github.event.client_payload.repo }}
           path: framework
-      - name: Cat package json
-        run: cat package.json
+      - name: Copy docs assets
+        uses: ./.github/actions/copy-docs-assets
 #      - name: Build
 #      - uses: actions/setup-node@v2
 #        with:
