@@ -17,10 +17,8 @@ jobs:
           path: framework
       - name: Copy docs assets
         uses: ./.github/actions/copy-doc-assets
-      - name: list files
-        run: ls -la docs
       - name: Install & Build
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: 15
           check-latest: true
