@@ -7,22 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # checkout this repo
+#      - name: Check out this repo
 #      - uses: actions/checkout@v2
 #        with:
 #          path: main
-      # checkout the triggering repo
-      - uses: actions/checkout@v2
+      - name: Check out the triggering repo
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.ref }}
           repository: ${{ github.event.client_payload.repo }}
-      - run: echo ${{ github.event.inputs }}
+      - run: echo ${{ github.event }}
+      - run: ls -la
+#      - name: Build
 #      - uses: actions/setup-node@v2
 #        with:
 #          node-version: 15
 #          check-latest: true
 #      - run: npm ci
-#      - uses: netlify/actions/cli@master
+#      - run: npm run docs:build
+#      - name: Deploy
+#        uses: netlify/actions/cli@master
 #        with:
 #          args: deploy --dir=site
 #        env:
