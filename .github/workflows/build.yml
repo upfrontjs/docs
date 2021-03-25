@@ -24,8 +24,7 @@ jobs:
         with:
           node-version: 15
           check-latest: true
-      - run: npm ci
-      - run: npm run docs:build
+        run: npm ci && npm run docs:build
       - name: Deploy
         uses: netlify/actions/cli@master
         with:
