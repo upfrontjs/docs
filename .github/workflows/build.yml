@@ -16,7 +16,7 @@ jobs:
         with:
           ref: ${{ github.event.client_payload.ref }}
           repository: ${{ github.event.client_payload.repo }}
-      - run: echo ${{ github.event.client_payload }}
+      - run: echo ${{ github.event.client_payload.ref }}
       - run: ls -la
 #      - name: Build
 #      - uses: actions/setup-node@v2
