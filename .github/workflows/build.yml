@@ -19,17 +19,17 @@ jobs:
         uses: ./.github/actions/copy-doc-assets
       - name: list files
         run: ls -la docs
-#      - name: Build
-#      - uses: actions/setup-node@v2
-#        with:
-#          node-version: 15
-#          check-latest: true
-#      - run: npm ci
-#      - run: npm run docs:build
-#      - name: Deploy
-#        uses: netlify/actions/cli@master
-#        with:
-#          args: deploy --dir=docs/dist
-#        env:
-#          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-#          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      - name: Install & Build
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 15
+          check-latest: true
+      - run: npm ci
+      - run: npm run docs:build
+      - name: Deploy
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=docs/dist -p
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
