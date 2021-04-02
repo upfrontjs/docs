@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/upfrontjs/docs#readme",
   "devDependencies": {
+    "@mr-hope/vuepress-plugin-seo": "^1.13.3",
     "@vuepress/plugin-back-to-top": "^1.8.0",
     "vuepress": "^1.8.0",
     "vuepress-plugin-fulltext-search": "^2.1.0",
-    "vuepress-plugin-one-click-copy": "^1.0.2"
+    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-theme-succinct": "^1.7.2"
   }
 }

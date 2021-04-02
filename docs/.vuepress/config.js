@@ -1,6 +1,10 @@
 const links = require('./links');
 
 module.exports = context => ({
+    globalUIComponents: [
+        'ThemeManager'
+    ],
+    theme: 'succinct',
     title: 'UpfrontJS',
     description: 'Data handling framework complementary to backend model systems.',
     plugins: [
@@ -9,7 +13,8 @@ module.exports = context => ({
             copyMessage: 'Copied!',
         }],
         ['@vuepress/back-to-top'],
-        ['fulltext-search']
+        ['fulltext-search'],
+        ['@mr-hope/seo']
     ],
     markdown: {
         lineNumbers: true,
@@ -18,6 +23,7 @@ module.exports = context => ({
         }
     },
     themeConfig: {
+        prefersTheme: 'dark',
         nav: [
             ...links.nav
         ],
