@@ -7,6 +7,9 @@ module.exports = context => ({
     theme: 'succinct',
     title: 'UpfrontJS',
     description: 'Data handling framework complementary to backend model systems.',
+    head: [
+        ['link', { rel: 'icon', href: 'https://raw.githubusercontent.com/upfrontjs/design/5f54d4d13ab22b32ba1782480079ff2b997f82d2/upfrontjs-square.svg' }]
+    ],
     plugins: [
         ['one-click-copy', {
             copySelector: ['div[class*="language-shell"] pre', 'div[class*="aside-code"] aside'],
