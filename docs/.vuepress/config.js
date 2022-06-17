@@ -17,7 +17,8 @@ module.exports = context => ({
         }],
         ['@vuepress/back-to-top'],
         ['fulltext-search'],
-        ['@mr-hope/seo']
+        ['@mr-hope/seo'],
+        require('./search-shortcut'),
     ],
     markdown: {
         lineNumbers: true,
