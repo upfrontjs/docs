@@ -9,20 +9,30 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v2
+
       - name: Check out the triggering repo
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.ref }}
           repository: ${{ github.event.client_payload.repo }}
           path: framework
+
       - name: Copy docs assets
         uses: ./.github/actions/copy-doc-assets
+
       - name: Setup node
         uses: actions/setup-node@v3
+
       - name: Install
         run: npm ci
+
       - name: Build
         run: npm run build
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+
       - name: Deploy
         uses: netlify/actions/cli@master
         with:
