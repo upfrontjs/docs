@@ -1,3 +1,8 @@
 .idea
 node_modules
 docs/**/*.md
+docs/.vuepress/dist
+.temp
+.cache
+.env
+.DS_STORE
