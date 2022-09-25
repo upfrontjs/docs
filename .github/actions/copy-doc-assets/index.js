@@ -18,8 +18,11 @@ function copyDir(src, dest) {
         let srcPath = path.join(src, entry.name);
         let destPath = path.join(dest, entry.name);
 
-        entry.isDirectory() ?
-            copyDir(srcPath, destPath) :
+        if (entry.isDirectory()) {
+            copyDir(srcPath, destPath)
+        } else {
+            console.log('Copying \'' + srcPath + '\' to \'' + destPath + '\'')
             fs.copyFileSync(srcPath, destPath);
+        }
     }
 }

@@ -2,6 +2,8 @@ import links from './links';
 import { loadEnv } from 'vite';
 import { defaultTheme, defineUserConfig } from 'vuepress'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
+import { seoPlugin } from "vuepress-plugin-seo2";
 
 const { ALGOLIA_APP_ID, ALGOLIA_API_KEY, ALGOLIA_INDEX_NAME } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
@@ -18,6 +20,14 @@ export default defineUserConfig({
         }
     },
     plugins:[
+        sitemapPlugin({
+            hostname: 'https://upfrontjs.com/',
+            changefreq: 'monthly'
+        }),
+        seoPlugin({
+            hostname: 'https://upfrontjs.com/',
+            fallBackImage: 'https://raw.githubusercontent.com/upfrontjs/design/main/upfront-square-with-bg.png',
+        }),
         docsearchPlugin({
             appId: ALGOLIA_APP_ID,
             apiKey: ALGOLIA_API_KEY,
